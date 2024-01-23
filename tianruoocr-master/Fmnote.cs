@@ -8,7 +8,7 @@ namespace TrOCR
 {
 
 	public partial class FmNote
-    {
+	{
 
 		public FmNote()
 		{
@@ -103,10 +103,10 @@ namespace TrOCR
 		}
 
 
-        public string TextNote
+		public string TextNote
 		{
 			get => null;
-            set
+			set
 			{
 				for (var i = 0; i < StaticValue.NoteCount; i++)
 				{
@@ -165,7 +165,7 @@ namespace TrOCR
 		public string TextNoteChange
 		{
 			get => null;
-            set
+			set
 			{
 				dataGridView1.Rows.Clear();
 				dataGridView1.ColumnCount = 1;

@@ -16,7 +16,7 @@ namespace TrOCR.Helper
 {
     public static class CommonHelper
     {
-        private static readonly HttpHelper DefaultHttpHelper = new HttpHelper();  
+        private static readonly HttpHelper DefaultHttpHelper = new HttpHelper();
 
         public static void ShowHelpMsg(string msg)
         {

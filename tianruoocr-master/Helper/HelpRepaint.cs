@@ -26,13 +26,13 @@ namespace TrOCR.Helper
 			public Color ItemColor
 			{
 				get => color;
-                set => color = value;
-            }
+				set => color = value;
+			}
 
 
 			public string Name { get; set; }
 
-            public Color color;
+			public Color color;
 		}
 
 		public sealed class HwColorPicker : FloatLayerBase
@@ -41,17 +41,17 @@ namespace TrOCR.Helper
 			public Color SelectedColor => selectedColor;
 
 
-            [DefaultValue(true)]
+			[DefaultValue(true)]
 			[Description("是否显示颜色提示")]
 			public bool ShowTip { get; set; }
 
 
-            [DefaultValue(typeof(Color), "255, 238, 194")]
+			[DefaultValue(typeof(Color), "255, 238, 194")]
 			[Description("高亮背景色")]
 			public Color HoverBkColor
 			{
 				get => hoverBKColor;
-                set
+				set
 				{
 					var flag = hoverBKColor != value;
 					var flag2 = flag;
@@ -87,15 +87,15 @@ namespace TrOCR.Helper
 
 			public List<ColorItemX> ColorTable => colorTable;
 
-            public HwColorPicker()
+			public HwColorPicker()
 			{
 				Font = new Font(Font.Name, 9f / StaticValue.DpiFactor, Font.Style, Font.Unit, Font.GdiCharSet, Font.GdiVerticalFont);
 				hoverItem = -1;
 				InitializeComponent();
 				InitColor();
 				CalcWindowSize();
-                sf = new StringFormat {Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center};
-                HoverBkColor = Color.FromArgb(255, 238, 194);
+				sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
+				HoverBkColor = Color.FromArgb(255, 238, 194);
 				ShowTip = true;
 			}
 
@@ -132,7 +132,7 @@ namespace TrOCR.Helper
 				var flag18 = flag17;
 				var flag19 = flag18;
 				var flag20 = flag19;
-                var result = flag20 ? Rectangle.FromLTRB(0, 0, 0, 0) : new Rectangle(index % 8 * 18 + 3, index / 8 * 18 + 3, 18, 18);
+				var result = flag20 ? Rectangle.FromLTRB(0, 0, 0, 0) : new Rectangle(index % 8 * 18 + 3, index / 8 * 18 + 3, 18, 18);
 				return result;
 			}
 
@@ -374,11 +374,11 @@ namespace TrOCR.Helper
 			[CompilerGenerated]
 			private EventHandler SelectedColorChanged;
 
-            private Color selectedColor;
+			private Color selectedColor;
 
-            private Color hoverBKColor;
+			private Color hoverBKColor;
 
-            private List<ColorItemX> colorTable;
+			private List<ColorItemX> colorTable;
 
 			public StringFormat sf;
 
@@ -443,13 +443,13 @@ namespace TrOCR.Helper
 			}
 
 			public void DrawMenuDropDownItemHighlight(ToolStripItemRenderEventArgs e)
-            {
-                var rect = new Rectangle(2, 0, (int)e.Graphics.VisibleClipBounds.Width - 36, (int)e.Graphics.VisibleClipBounds.Height - 1);
-                using (var pen = new Pen(menuItemBorderColor))
+			{
+				var rect = new Rectangle(2, 0, (int)e.Graphics.VisibleClipBounds.Width - 36, (int)e.Graphics.VisibleClipBounds.Height - 1);
+				using (var pen = new Pen(menuItemBorderColor))
 				{
 					e.Graphics.DrawRectangle(pen, rect);
 				}
-            }
+			}
 
 			protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
 			{
@@ -548,7 +548,7 @@ namespace TrOCR.Helper
 				var item = e.Item;
 				var graphics = e.Graphics;
 				graphics.SmoothingMode = SmoothingMode.HighQuality;
-                var selected = item.Selected;
+				var selected = item.Selected;
 				var flag = selected;
 				var flag2 = flag;
 				var flag3 = flag2;
@@ -632,13 +632,13 @@ namespace TrOCR.Helper
 			}
 
 			public void DrawMenuDropDownItemHighlight(ToolStripItemRenderEventArgs e)
-            {
-                var rect = new Rectangle(2, 0, (int)e.Graphics.VisibleClipBounds.Width - 4, (int)e.Graphics.VisibleClipBounds.Height - 1);
-                using (var pen = new Pen(menuItemBorderColor))
+			{
+				var rect = new Rectangle(2, 0, (int)e.Graphics.VisibleClipBounds.Width - 4, (int)e.Graphics.VisibleClipBounds.Height - 1);
+				using (var pen = new Pen(menuItemBorderColor))
 				{
 					e.Graphics.DrawRectangle(pen, rect);
 				}
-            }
+			}
 
 			public Font textFont;
 
@@ -701,7 +701,7 @@ namespace TrOCR.Helper
 
 
 			public Point GetPoint => GetOpenPoint();
-        }
+		}
 
 		public class ToolStripEx : ToolStrip
 		{
@@ -723,7 +723,7 @@ namespace TrOCR.Helper
 			public BorderStyle BorderType
 			{
 				get => _borderType;
-                set
+				set
 				{
 					var flag = _borderType != value;
 					var flag2 = flag;
@@ -749,7 +749,7 @@ namespace TrOCR.Helper
 			public Border3DStyle Border3DStyle
 			{
 				get => _border3DStyle;
-                set
+				set
 				{
 					var flag = _border3DStyle != value;
 					var flag2 = flag;
@@ -775,7 +775,7 @@ namespace TrOCR.Helper
 			public ButtonBorderStyle BorderSingleStyle
 			{
 				get => _borderSingleStyle;
-                set
+				set
 				{
 					var flag = _borderSingleStyle != value;
 					var flag2 = flag;
@@ -801,7 +801,7 @@ namespace TrOCR.Helper
 			public Color BorderColor
 			{
 				get => _borderColor;
-                set
+				set
 				{
 					var flag = !(_borderColor == value);
 					var flag2 = flag;
@@ -1193,170 +1193,170 @@ namespace TrOCR.Helper
 				TopMost = false;
 				WindowState = FormWindowState.Normal;
 			}
-//
-//			[Obsolete("请使用别的重载！", true)]
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Browsable(false)]
-//			public new DialogResult ShowDialog()
-//			{
-//				throw new NotImplementedException();
-//			}
-//
-//			[Obsolete("请使用别的重载！", true)]
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Browsable(false)]
-//			public new DialogResult ShowDialog(IWin32Window owner)
-//			{
-//				throw new NotImplementedException();
-//			}
-//
-//			[Obsolete("请使用别的重载！", true)]
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Browsable(false)]
-//			public new void Show()
-//			{
-//				throw new NotImplementedException();
-//			}
-//
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Browsable(false)]
-//			[Obsolete("请使用别的重载！", true)]
-//			public new void Show(IWin32Window owner)
-//			{
-//				throw new NotImplementedException();
-//			}
+			//
+			//			[Obsolete("请使用别的重载！", true)]
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Browsable(false)]
+			//			public new DialogResult ShowDialog()
+			//			{
+			//				throw new NotImplementedException();
+			//			}
+			//
+			//			[Obsolete("请使用别的重载！", true)]
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Browsable(false)]
+			//			public new DialogResult ShowDialog(IWin32Window owner)
+			//			{
+			//				throw new NotImplementedException();
+			//			}
+			//
+			//			[Obsolete("请使用别的重载！", true)]
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Browsable(false)]
+			//			public new void Show()
+			//			{
+			//				throw new NotImplementedException();
+			//			}
+			//
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Browsable(false)]
+			//			[Obsolete("请使用别的重载！", true)]
+			//			public new void Show(IWin32Window owner)
+			//			{
+			//				throw new NotImplementedException();
+			//			}
 
 
-            [Browsable(false)]
+			[Browsable(false)]
 			[Obsolete("禁用该属性！", true)]
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			public sealed override string Text
 			{
 				get => string.Empty;
-                set
+				set
 				{
 				}
 			}
-//
-//
-//			[Obsolete("禁用该属性！", true)]
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Browsable(false)]
-//			public new bool HelpButton
-//			{
-//				get => false;
-//                set
-//				{
-//				}
-//			}
-//
-//
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Browsable(false)]
-//			[Obsolete("禁用该属性！", true)]
-//			public new Image Icon
-//			{
-//				get => null;
-//                set
-//				{
-//				}
-//			}
-//
-//
-//			[Obsolete("禁用该属性！", true)]
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Browsable(false)]
-//			public new bool IsMdiContainer
-//			{
-//				get => false;
-//                set
-//				{
-//				}
-//			}
-//
-//
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Obsolete("禁用该属性！", true)]
-//			[Browsable(false)]
-//			public new bool MaximizeBox
-//			{
-//				get => false;
-//                set
-//				{
-//				}
-//			}
-//
-//
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Browsable(false)]
-//			[Obsolete("禁用该属性！", true)]
-//			public new bool MinimizeBox
-//			{
-//				get => false;
-//                set
-//				{
-//				}
-//			}
-//
-//
-//			[Browsable(false)]
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Obsolete("禁用该属性！", true)]
-//			public new bool ShowIcon
-//			{
-//				get => false;
-//                set
-//				{
-//				}
-//			}
-//
-//
-//			[Browsable(false)]
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Obsolete("禁用该属性！", true)]
-//			public new bool ShowInTaskbar
-//			{
-//				get => false;
-//                set
-//				{
-//				}
-//			}
-//
-//
-//			[Browsable(false)]
-//			[Obsolete("禁用该属性！", true)]
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			public new FormStartPosition StartPosition
-//			{
-//				get => FormStartPosition.Manual;
-//                set
-//				{
-//				}
-//			}
-//
-//
-//			[Browsable(false)]
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			[Obsolete("禁用该属性！", true)]
-//			public new bool TopMost
-//			{
-//				get => false;
-//                set
-//				{
-//				}
-//			}
-//
-//
-//			[Browsable(false)]
-//			[Obsolete("禁用该属性！", true)]
-//			[EditorBrowsable(EditorBrowsableState.Never)]
-//			public new FormWindowState WindowState
-//			{
-//				get => FormWindowState.Normal;
-//                set
-//				{
-//				}
-//			}
+			//
+			//
+			//			[Obsolete("禁用该属性！", true)]
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Browsable(false)]
+			//			public new bool HelpButton
+			//			{
+			//				get => false;
+			//                set
+			//				{
+			//				}
+			//			}
+			//
+			//
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Browsable(false)]
+			//			[Obsolete("禁用该属性！", true)]
+			//			public new Image Icon
+			//			{
+			//				get => null;
+			//                set
+			//				{
+			//				}
+			//			}
+			//
+			//
+			//			[Obsolete("禁用该属性！", true)]
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Browsable(false)]
+			//			public new bool IsMdiContainer
+			//			{
+			//				get => false;
+			//                set
+			//				{
+			//				}
+			//			}
+			//
+			//
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Obsolete("禁用该属性！", true)]
+			//			[Browsable(false)]
+			//			public new bool MaximizeBox
+			//			{
+			//				get => false;
+			//                set
+			//				{
+			//				}
+			//			}
+			//
+			//
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Browsable(false)]
+			//			[Obsolete("禁用该属性！", true)]
+			//			public new bool MinimizeBox
+			//			{
+			//				get => false;
+			//                set
+			//				{
+			//				}
+			//			}
+			//
+			//
+			//			[Browsable(false)]
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Obsolete("禁用该属性！", true)]
+			//			public new bool ShowIcon
+			//			{
+			//				get => false;
+			//                set
+			//				{
+			//				}
+			//			}
+			//
+			//
+			//			[Browsable(false)]
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Obsolete("禁用该属性！", true)]
+			//			public new bool ShowInTaskbar
+			//			{
+			//				get => false;
+			//                set
+			//				{
+			//				}
+			//			}
+			//
+			//
+			//			[Browsable(false)]
+			//			[Obsolete("禁用该属性！", true)]
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			public new FormStartPosition StartPosition
+			//			{
+			//				get => FormStartPosition.Manual;
+			//                set
+			//				{
+			//				}
+			//			}
+			//
+			//
+			//			[Browsable(false)]
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			[Obsolete("禁用该属性！", true)]
+			//			public new bool TopMost
+			//			{
+			//				get => false;
+			//                set
+			//				{
+			//				}
+			//			}
+			//
+			//
+			//			[Browsable(false)]
+			//			[Obsolete("禁用该属性！", true)]
+			//			[EditorBrowsable(EditorBrowsableState.Never)]
+			//			public new FormWindowState WindowState
+			//			{
+			//				get => FormWindowState.Normal;
+			//                set
+			//				{
+			//				}
+			//			}
 
 			public readonly AppMouseMessageHandler _mouseMsgFilter;
 
@@ -1477,7 +1477,7 @@ namespace TrOCR.Helper
 
 			public Color SelectedColor => select_color;
 
-            private readonly HwColorPicker cp;
+			private readonly HwColorPicker cp;
 
 			public Color select_color;
 		}
@@ -1600,7 +1600,7 @@ namespace TrOCR.Helper
 			public string SetLine
 			{
 				set => SetLineSpace();
-            }
+			}
 
 			private const int EM_SETEVENTMASK = 1073;
 

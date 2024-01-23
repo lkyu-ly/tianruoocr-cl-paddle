@@ -4,8 +4,8 @@ using System.Drawing;
 namespace TrOCR.Helper
 {
 
-	public static class StaticValue
-	{
+    public static class StaticValue
+    {
         public static string v_Split;
 
         public static string v_Restore;
@@ -91,25 +91,25 @@ namespace TrOCR.Helper
         public static string ReleaseDate;
 
         static StaticValue()
-		{
-			note = "";
-			NoteCount = 40;
-			copy_f = "无格式";
-			content = "天若OCR更新";
-			ZH2EN = true;
-			ZH2JP = false;
-			ZH2KO = false;
-			set_默认 = true;
-			set_拆分 = false;
-			set_合并 = false;
-			set_翻译 = false;
-			set_记录 = false;
-			set_截图 = false;
-			DpiFactor = 1f;
-			CurrentVersion = "5.0.1";
-			ReleaseDate = "2019-02-27";
-		}
+        {
+            note = "";
+            NoteCount = 40;
+            copy_f = "无格式";
+            content = "天若OCR更新";
+            ZH2EN = true;
+            ZH2JP = false;
+            ZH2KO = false;
+            set_默认 = true;
+            set_拆分 = false;
+            set_合并 = false;
+            set_翻译 = false;
+            set_记录 = false;
+            set_截图 = false;
+            DpiFactor = 1f;
+            CurrentVersion = "5.0.1";
+            ReleaseDate = "2019-02-27";
+        }
 
-		
-	}
+
+    }
 }

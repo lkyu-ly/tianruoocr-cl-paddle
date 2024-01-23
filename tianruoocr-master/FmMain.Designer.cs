@@ -6,9 +6,9 @@ namespace TrOCR
 
 	public sealed partial class FmMain : global::System.Windows.Forms.Form
 	{
-        public float 放大倍数 = 1.0f;
+		public float 放大倍数 = 1.0f;
 
-        protected override void Dispose(bool disposing)
+		protected override void Dispose(bool disposing)
 		{
 			global::TrOCR.Helper.HelpWin32.ChangeClipboardChain(base.Handle, this.nextClipboardViewer);
 			if (disposing && this.components != null)
@@ -20,20 +20,20 @@ namespace TrOCR
 
 		private void InitializeComponent()
 		{
-            var value27 = IniHelper.GetValue("其他特性", "缩放倍数");
-            if (value27 == "发生错误")
-            {
-                放大倍数 = 1;
-            }
-            else
-            {
-                放大倍数 = (float)Convert.ToSingle(value27);
+			var value27 = IniHelper.GetValue("其他特性", "缩放倍数");
+			if (value27 == "发生错误")
+			{
+				放大倍数 = 1;
+			}
+			else
+			{
+				放大倍数 = (float)Convert.ToSingle(value27);
 				if (放大倍数 >= 1.3)
 				{
 					放大倍数 = 放大倍数 / 1.2f;
-                }
-            }
-            this.components = new global::System.ComponentModel.Container();
+				}
+			}
+			this.components = new global::System.ComponentModel.Container();
 			global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::TrOCR.FmMain));
 			this.minico = new global::System.Windows.Forms.NotifyIcon(this.components);
 			this.toolStripSeparator1 = new global::System.Windows.Forms.ToolStripSeparator();
@@ -42,9 +42,9 @@ namespace TrOCR
 			this.trans_google = new global::System.Windows.Forms.ToolStripMenuItem();
 			this.trans_baidu = new global::System.Windows.Forms.ToolStripMenuItem();
 			this.trans_tencent = new global::System.Windows.Forms.ToolStripMenuItem();
-            this.trans_chaiyun = new global::System.Windows.Forms.ToolStripMenuItem();
-            this.trans_offline = new global::System.Windows.Forms.ToolStripMenuItem();
-            this.baidu_table = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.trans_chaiyun = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.trans_offline = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.baidu_table = new global::System.Windows.Forms.ToolStripMenuItem();
 			this.ali_table = new global::System.Windows.Forms.ToolStripMenuItem();
 			this.ocr_table = new global::System.Windows.Forms.ToolStripMenuItem();
 			this.menu = new global::System.Windows.Forms.ContextMenuStrip();
@@ -104,8 +104,8 @@ namespace TrOCR
 			this.minico.Visible = true;
 			this.minico.MouseDoubleClick += new global::System.Windows.Forms.MouseEventHandler(this.tray_double_Click);
 
-			this.font_base.Width = 18f * this.F_factor* 放大倍数;
-			this.font_base.Height = 17f * this.F_factor* 放大倍数;
+			this.font_base.Width = 18f * this.F_factor * 放大倍数;
+			this.font_base.Height = 17f * this.F_factor * 放大倍数;
 			this.RichBoxBody_T.Visible = false;
 			this.RichBoxBody.Dock = global::System.Windows.Forms.DockStyle.Fill;
 			this.RichBoxBody.BorderStyle = global::System.Windows.Forms.BorderStyle.Fixed3D;
@@ -133,11 +133,11 @@ namespace TrOCR
 			this.trans_baidu.Click += new global::System.EventHandler(this.Trans_baidu_Click);
 			this.trans_tencent.Text = "腾讯";
 			this.trans_tencent.Click += new global::System.EventHandler(this.Trans_tencent_Click);
-            this.trans_chaiyun.Text = "彩云";
-            this.trans_chaiyun.Click += new global::System.EventHandler(this.Trans_chaiyun_Click);
-            this.trans_offline.Text = "离线翻译";
-            this.trans_offline.Click += new global::System.EventHandler(this.Trans_offline_Click);
-            this.menu_copy.Items.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			this.trans_chaiyun.Text = "彩云";
+			this.trans_chaiyun.Click += new global::System.EventHandler(this.Trans_chaiyun_Click);
+			this.trans_offline.Text = "离线翻译";
+			this.trans_offline.Click += new global::System.EventHandler(this.Trans_offline_Click);
+			this.menu_copy.Items.AddRange(new global::System.Windows.Forms.ToolStripItem[]
 			{
 				this.Trans_copy,
 				this.Trans_paste,
@@ -152,8 +152,8 @@ namespace TrOCR
 				this.trans_baidu,
 				this.trans_tencent,
 				this.trans_chaiyun,
-                this.trans_offline
-            });
+				this.trans_offline
+			});
 			this.menu_copy.Font = new global::System.Drawing.Font("微软雅黑", 9f / global::TrOCR.Helper.StaticValue.DpiFactor, global::System.Drawing.FontStyle.Regular);
 			this.Main_copy.Text = "复制";
 			this.Main_copy.Click += new global::System.EventHandler(this.MainCopyClick);
@@ -417,11 +417,11 @@ namespace TrOCR
 
 		private global::System.Windows.Forms.ToolStripMenuItem trans_tencent;
 
-        private global::System.Windows.Forms.ToolStripMenuItem trans_chaiyun;
+		private global::System.Windows.Forms.ToolStripMenuItem trans_chaiyun;
 
-        private global::System.Windows.Forms.ToolStripMenuItem trans_offline;
+		private global::System.Windows.Forms.ToolStripMenuItem trans_offline;
 
-        private global::System.Windows.Forms.ToolStripMenuItem ocr_table;
+		private global::System.Windows.Forms.ToolStripMenuItem ocr_table;
 
 		private global::System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 

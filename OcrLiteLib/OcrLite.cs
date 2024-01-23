@@ -23,11 +23,11 @@ namespace OcrLiteLib
             crnnNet = new CrnnNet();
         }
 
-        public void InitModels(string detPath,string clsPath,string recPath,string keysPath,int numThread)
+        public void InitModels(string detPath, string clsPath, string recPath, string keysPath, int numThread)
         {
             try
             {
-                dbNet.InitModel(detPath,numThread);
+                dbNet.InitModel(detPath, numThread);
                 angleNet.InitModel(clsPath, numThread);
                 crnnNet.InitModel(recPath, keysPath, numThread);
             }
@@ -38,7 +38,7 @@ namespace OcrLiteLib
             }
         }
 
-        public OcrResult Detect(Mat img, int padding, int imgResize, float boxScoreThresh, float boxThresh, 
+        public OcrResult Detect(Mat img, int padding, int imgResize, float boxScoreThresh, float boxThresh,
                               float unClipRatio, bool doAngle, bool mostAngle)
         {
             Mat brgSrc = img;

@@ -27,106 +27,106 @@ namespace TrOCR
 			MaximumSize = (MinimumSize = size);
 			Size = size;
 			MouseDoubleClick += 双击_MouseDoubleClick;
-            MouseWheel += Form_MouseWheel;
-            KeyDown += FmScreenPaste_KeyDown;
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(AdvRichTextBox));
-            Icon = (global::System.Drawing.Icon)componentResourceManager.GetObject("minico.Icon");
-        }
-        private void FmScreenPaste_KeyDown(object sender, KeyEventArgs e)
-        {
-            int t = 1;
-            if (e.Shift)
-            {
-                t = 10;
-            }
-            switch (e.KeyCode)
-            {
-                case Keys.Left:
-                    this.Left -= t * 1;
-                    break;
-                case Keys.Up:
-                    this.Top -= t * 1;
-                    break;
-                case Keys.Right:
-                    this.Left += t * 1;
-                    break;
-                case Keys.Down:
-                    this.Top += t * 1;
-                    break;
-            }
-        }
-        System.Timers.Timer _timerTrt;
-        /// <summary>
-        /// 即刻执行，执行之后，在timeMs内再次调用无效
-        /// </summary>
-        /// <param name="timeMs">不应期，这段时间内调用无效</param>
-        /// <param name="invoker">同步对象，一般为控件。 如不需同步可传null</param>
-        public void Throttle(int timeMs, ISynchronizeInvoke invoker, Action action)
-        {
-            System.Threading.Monitor.Enter(this);
-            bool needExit = true;
-            try
-            {
-                if (_timerTrt == null)
-                {
-                    _timerTrt = new System.Timers.Timer(timeMs);
-                    _timerTrt.AutoReset = false;
-                    _timerTrt.Elapsed += (o, e) =>
-                    {
-                        _timerTrt.Stop();
-                        _timerTrt.Close();
-                        _timerTrt = null;
-                    };
-                    _timerTrt.Start();
-                    System.Threading.Monitor.Exit(this);
-                    needExit = false;
-                    InvokeAction(action, invoker);//这个过程不能锁
-                }
-            }
-            finally
-            {
-                if (needExit)
-                    System.Threading.Monitor.Exit(this);
-            }
-        }
-        private static void InvokeAction(Action action, ISynchronizeInvoke invoker)
-        {
-            if (invoker == null)
-            {
-                action();
-            }
-            else
-            {
-                if (invoker.InvokeRequired)
-                {
-                    invoker.Invoke(action, null);
-                }
-                else
-                {
-                    action();
-                }
-            }
-        }
-        //鼠标滚轮调整透明度
-        private void Form_MouseWheel(object sender, MouseEventArgs e)
-        {
-            const double min = 0.2;
-            const double max = 1;
-            var isup = e.Delta < 0;
-            Throttle(5, this, () =>
-            {
-                if (isup)
-                {
-                    if (this.Opacity <= min) return;
-                    this.Opacity -= 0.1;
-                }
-                else
-                {
-                    if (this.Opacity >= max) return;
-                    this.Opacity += 0.1;
-                }
-            });
-        }
+			MouseWheel += Form_MouseWheel;
+			KeyDown += FmScreenPaste_KeyDown;
+			ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(AdvRichTextBox));
+			Icon = (global::System.Drawing.Icon)componentResourceManager.GetObject("minico.Icon");
+		}
+		private void FmScreenPaste_KeyDown(object sender, KeyEventArgs e)
+		{
+			int t = 1;
+			if (e.Shift)
+			{
+				t = 10;
+			}
+			switch (e.KeyCode)
+			{
+				case Keys.Left:
+					this.Left -= t * 1;
+					break;
+				case Keys.Up:
+					this.Top -= t * 1;
+					break;
+				case Keys.Right:
+					this.Left += t * 1;
+					break;
+				case Keys.Down:
+					this.Top += t * 1;
+					break;
+			}
+		}
+		System.Timers.Timer _timerTrt;
+		/// <summary>
+		/// 即刻执行，执行之后，在timeMs内再次调用无效
+		/// </summary>
+		/// <param name="timeMs">不应期，这段时间内调用无效</param>
+		/// <param name="invoker">同步对象，一般为控件。 如不需同步可传null</param>
+		public void Throttle(int timeMs, ISynchronizeInvoke invoker, Action action)
+		{
+			System.Threading.Monitor.Enter(this);
+			bool needExit = true;
+			try
+			{
+				if (_timerTrt == null)
+				{
+					_timerTrt = new System.Timers.Timer(timeMs);
+					_timerTrt.AutoReset = false;
+					_timerTrt.Elapsed += (o, e) =>
+					{
+						_timerTrt.Stop();
+						_timerTrt.Close();
+						_timerTrt = null;
+					};
+					_timerTrt.Start();
+					System.Threading.Monitor.Exit(this);
+					needExit = false;
+					InvokeAction(action, invoker);//这个过程不能锁
+				}
+			}
+			finally
+			{
+				if (needExit)
+					System.Threading.Monitor.Exit(this);
+			}
+		}
+		private static void InvokeAction(Action action, ISynchronizeInvoke invoker)
+		{
+			if (invoker == null)
+			{
+				action();
+			}
+			else
+			{
+				if (invoker.InvokeRequired)
+				{
+					invoker.Invoke(action, null);
+				}
+				else
+				{
+					action();
+				}
+			}
+		}
+		//鼠标滚轮调整透明度
+		private void Form_MouseWheel(object sender, MouseEventArgs e)
+		{
+			const double min = 0.2;
+			const double max = 1;
+			var isup = e.Delta < 0;
+			Throttle(5, this, () =>
+			{
+				if (isup)
+				{
+					if (this.Opacity <= min) return;
+					this.Opacity -= 0.1;
+				}
+				else
+				{
+					if (this.Opacity >= max) return;
+					this.Opacity += 0.1;
+				}
+			});
+		}
 
 		private void RightCMS_Opening(object sender, CancelEventArgs e)
 		{
@@ -367,9 +367,9 @@ namespace TrOCR
 			public int bottomHeight;
 		}
 
-        private void 最小化ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-    }
+		private void 最小化ToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			WindowState = FormWindowState.Minimized;
+		}
+	}
 }

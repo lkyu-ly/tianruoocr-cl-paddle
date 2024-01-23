@@ -1,20 +1,20 @@
 ﻿namespace TrOCR
 {
 
-	public sealed partial class FmSetting : global::System.Windows.Forms.Form
-	{
+    public sealed partial class FmSetting : global::System.Windows.Forms.Form
+    {
 
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && this.components != null)
-			{
-				this.components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && this.components != null)
+            {
+                this.components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		private void InitializeComponent()
-		{
+        private void InitializeComponent()
+        {
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label_版本号 = new System.Windows.Forms.Label();
@@ -2317,9 +2317,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_zoom)).EndInit();
             this.ResumeLayout(false);
 
-		}
+        }
 
-		private global::System.ComponentModel.IContainer components;
+        private global::System.ComponentModel.IContainer components;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label_版本号;

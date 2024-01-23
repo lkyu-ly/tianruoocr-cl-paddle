@@ -675,7 +675,7 @@ namespace TrOCR
                 try
                 {
                     string[] sArray = value27.Split(',');
-                    if(sArray.Length == 2)
+                    if (sArray.Length == 2)
                     {
                         user_chang.Value = Convert.ToDecimal(sArray[0]);
                         user_kuan.Value = Convert.ToDecimal(sArray[1]);
@@ -1258,7 +1258,7 @@ namespace TrOCR
             IniHelper.SetValue("其他特性", "添加换行", cbBox_是否添加换行.Checked.ToString());
             IniHelper.SetValue("其他特性", "缩放倍数", num_zoom.Value.ToString());
             IniHelper.SetValue("其他特性", "文字缩放倍数", num_zoom_text.Value.ToString());
-            IniHelper.SetValue("其他特性", "自定义长宽", user_chang.Value.ToString()+","+ user_kuan.Value.ToString());
+            IniHelper.SetValue("其他特性", "自定义长宽", user_chang.Value.ToString() + "," + user_kuan.Value.ToString());
             DialogResult = DialogResult.OK;
         }
 

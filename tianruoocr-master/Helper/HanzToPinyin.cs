@@ -22,7 +22,7 @@ namespace TrOCR.Helper
         {
             input = input.Split(new[] { ':', '-' }, StringSplitOptions.RemoveEmptyEntries)[0];
             input = Regex.Replace(input, @"[^\u4e00-\u9fa5]", "");
-            var strArr = GetFullPinyin(input).Split(new[] {'\t', ' '}, StringSplitOptions.RemoveEmptyEntries);
+            var strArr = GetFullPinyin(input).Split(new[] { '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries);
             return strArr.Aggregate("", (current, s) => current + s[0]).ToUpper();
         }
 

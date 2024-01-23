@@ -8,7 +8,7 @@ namespace TrOCR
 {
 
 	public partial class FmLoading
-    {
+	{
 
 		public FmLoading()
 		{
@@ -207,8 +207,8 @@ namespace TrOCR
 		public string FmlClose
 		{
 			get => fm_close;
-            set => fm_close = value;
-        }
+			set => fm_close = value;
+		}
 
 		public int i_c;
 

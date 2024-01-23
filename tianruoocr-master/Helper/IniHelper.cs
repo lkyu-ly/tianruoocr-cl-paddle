@@ -360,7 +360,7 @@ namespace TrOCR.Helper
             b = doc.CreateElement("add");
 
             b.SetAttribute("key", "测试");
-            b.SetAttribute("value", "0"); 
+            b.SetAttribute("value", "0");
             特殊.AppendChild(b);
 
             XmlElement 其他特性 = doc.CreateElement("其他特性");

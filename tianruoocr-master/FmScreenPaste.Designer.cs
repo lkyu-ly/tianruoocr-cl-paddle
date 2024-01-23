@@ -1,21 +1,21 @@
 ﻿namespace TrOCR
 {
 
-	public partial class FmScreenPaste : global::System.Windows.Forms.Form
-	{
+    public partial class FmScreenPaste : global::System.Windows.Forms.Form
+    {
 
-		protected override void Dispose(bool disposing)
-		{
-			bool flag = disposing && this.components != null;
-			if (flag)
-			{
-				this.components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        protected override void Dispose(bool disposing)
+        {
+            bool flag = disposing && this.components != null;
+            if (flag)
+            {
+                this.components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		private void InitializeComponent()
-		{
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             this.RightMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.关闭ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,23 +100,23 @@
             this.RightMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
-		}
+        }
 
-		private global::System.ComponentModel.IContainer components;
+        private global::System.ComponentModel.IContainer components;
 
-		private global::System.Windows.Forms.ContextMenuStrip RightMenu;
+        private global::System.Windows.Forms.ContextMenuStrip RightMenu;
 
-		private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
 
-		private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
+        private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
 
-		private global::System.Windows.Forms.ToolStripMenuItem 关闭ToolStripMenuItem;
+        private global::System.Windows.Forms.ToolStripMenuItem 关闭ToolStripMenuItem;
 
-		private global::System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private global::System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 
-		private global::System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private global::System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 
-		private global::System.Windows.Forms.ToolStripMenuItem 置顶ToolStripMenuItem;
+        private global::System.Windows.Forms.ToolStripMenuItem 置顶ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 最小化ToolStripMenuItem;
     }
 }

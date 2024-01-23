@@ -10,12 +10,12 @@ namespace TrOCR
 {
 
 	public partial class FmFlags
-    {
+	{
 
 		public FmFlags()
-        {
-            InitializeComponent();
-        }
+		{
+			InitializeComponent();
+		}
 
 		protected override CreateParams CreateParams
 		{

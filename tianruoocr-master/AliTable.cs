@@ -9,7 +9,7 @@ using TrOCR.Helper;
 namespace TrOCR
 {
 
-    public partial class AliTable : Form
+	public partial class AliTable : Form
 	{
 
 		public AliTable()
@@ -83,7 +83,7 @@ namespace TrOCR
 			{
 				webBrowser1.Url = new Uri("https://data.aliyun.com/ai/ocr-other#/ocr-other");
 				IniHelper.SetValue("特殊", "ali_cookie", textBox1.Text);
-                Hide();
+				Hide();
 			}
 		}
 
@@ -101,7 +101,7 @@ namespace TrOCR
 				if (count >= 2)
 				{
 					count = 0;
-                    Show();
+					Show();
 				}
 				timer1.Stop();
 			}
@@ -127,8 +127,8 @@ namespace TrOCR
 			{
 				if (IniHelper.GetValue("特殊", "ali_account").Trim() != "" && IniHelper.GetValue("特殊", "ali_password").Trim() != "")
 				{
-//                    WebBrowserHelper.GetDocumentFromWindow(webBrowser1.Document.Window.Frames["alibaba-login-box"].DomWindow as IHTMLWindow2).getElementById("fm-login-id").setAttribute("value", IniHelper.GetValue("特殊", "ali_account"), 1);
-//                    WebBrowserHelper.GetDocumentFromWindow(webBrowser1.Document.Window.Frames["alibaba-login-box"].DomWindow as IHTMLWindow2).getElementById("fm-login-password").setAttribute("value", IniHelper.GetValue("特殊", "ali_password"), 1);
+					//                    WebBrowserHelper.GetDocumentFromWindow(webBrowser1.Document.Window.Frames["alibaba-login-box"].DomWindow as IHTMLWindow2).getElementById("fm-login-id").setAttribute("value", IniHelper.GetValue("特殊", "ali_account"), 1);
+					//                    WebBrowserHelper.GetDocumentFromWindow(webBrowser1.Document.Window.Frames["alibaba-login-box"].DomWindow as IHTMLWindow2).getElementById("fm-login-password").setAttribute("value", IniHelper.GetValue("特殊", "ali_password"), 1);
 				}
 			}
 			catch

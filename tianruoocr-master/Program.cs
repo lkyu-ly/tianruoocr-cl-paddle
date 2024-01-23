@@ -30,7 +30,7 @@ namespace TrOCR
                 programStarted.Set();
                 CommonHelper.ShowHelpMsg("软件已经运行");
                 return;
-                
+
             }
             InitConfig();
             DealErrorConfig();
@@ -145,7 +145,7 @@ namespace TrOCR
                 IniHelper.SetValue("配置", "开机自启", "True");
                 IniHelper.SetValue("配置", "快速翻译", "True");
                 IniHelper.SetValue("配置", "识别弹窗", "True");
-                
+
                 IniHelper.SetValue("配置", "窗体动画", "窗体");
                 IniHelper.SetValue("配置", "记录数目", "20");
                 IniHelper.SetValue("配置", "自动保存", "True");
